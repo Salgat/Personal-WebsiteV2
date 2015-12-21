@@ -160,7 +160,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-redditboost" href="javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-redditboost" href="//github.com/Salgat/RedditBoost" class="portfolio-box">
                         <img src="img/portfolio/RedditBoost.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -175,7 +175,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-gbs" href="javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-gbs" href="//github.com/Salgat/GameBoyEmulator-GBS" class="portfolio-box">
                         <img src="img/portfolio/GameboyEmulator.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -190,7 +190,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-greyweaver" href="#javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-greyweaver" href="//salgat.blogspot.com/2015/03/feature-update-audio.html" class="portfolio-box">
                         <img src="img/portfolio/GreyWeaver.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -205,7 +205,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-bubblegrow" href="javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-bubblegrow" href="//github.com/Salgat/BubbleGrow" class="portfolio-box">
                         <img src="img/portfolio/BubbleGrow.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -220,7 +220,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-serializequeue" href="javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-serializequeue" href="//github.com/Salgat/SerializeQueue" class="portfolio-box">
                         <img src="img/portfolio/SerializeQueue.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -235,7 +235,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a id="portfolio-wiimotion" href="javascript:void(0)" class="portfolio-box">
+                    <a id="portfolio-wiimotion" href="//salgat-urop.blogspot.com/" class="portfolio-box">
                         <img src="img/portfolio/WiiMotionPlus.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -295,150 +295,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
-
-    <!-- Modal Popup for Gallery -->
-    <script>
-        var modal = (function(){
-            var 
-            method = {},
-            $overlay,
-            $modal,
-            $content,
-            $close;
-    
-            // Center the modal in the viewport
-            method.center = function () {
-                var top, left;
-    
-                top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
-                left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
-    
-                $modal.css({
-                    top:top + $(window).scrollTop(), 
-                    left:left + $(window).scrollLeft()
-                });
-            };
-    
-            // Open the modal
-            method.open = function (settings) {
-                $content.empty().append(settings.content);
-    
-                $modal.css({
-                    width: settings.width || 'auto', 
-                    height: settings.height || 'auto'
-                });
-    
-                method.center();
-                $(window).bind('resize.modal', method.center);
-                $modal.show();
-                $overlay.show();
-            };
-    
-            // Close the modal
-            method.close = function () {
-                $modal.hide();
-                $overlay.hide();
-                $content.empty();
-                $(window).unbind('resize.modal');
-            };
-    
-            // Generate the HTML and add it to the document
-            $overlay = $('<div id="overlay"></div>');
-            $modal = $('<div id="modal"></div>');
-            $content = $('<div id="content"></div>');
-            $close = $('<a id="close" href="#">close</a>');
-    
-            $modal.hide();
-            $overlay.hide();
-            $modal.append($content, $close);
-    
-            $(document).ready(function(){
-                $('body').append($overlay, $modal);						
-            });
-    
-            $close.click(function(e){
-                e.preventDefault();
-                method.close();
-            });
-    
-            return method;
-        }());
-    
-        // Markup for each project modal
-        var bubblegrowHtml =   "<h3 style='text-align: center'>BubbleGrow</h3> \
-                                <p> BubbleGrow is a free, open-source, and cross-platform game developed with the intention of being friendly for developers (particularly inexperienced) to contribute to. \
-                                    This is a C++14 project whose only dependency is currently <a href='http://www.sfml-dev.org/'>SFML</a>.</p> \
-                                <p> To play the game (Windows 64-bit): <a href='http://github.com/Salgat/BubbleGrow/raw/master/BubbleGrow-V0.1-Windows-x64.zip'>CLICK HERE</a></p> \
-                                <p><a href='http://github.com/Salgat/BubbleGrow'><i class='fa fa-github-square wow bounceIn text-primary'></i> GitHub Repository</a></p> \
-                                <p class=''><a href='http://github.com/Salgat/BubbleGrow/wiki'><i class='fa fa-github-square wow bounceIn text-primary'></i> GitHub Repository - Documentation</a></p>";
-                                
-        var gbsHtml =          "<h3 style='text-align: center'>GBS - Gameboy Emulator</h3> \
-                                <p> GBS is a free, open-source, and cross-platform implementation of the Game Boy console written in C++14 with a single library dependency of <a href='http://www.sfml-dev.org/'>SFML</a>.</p> \
-                                <p> As of now, the emulator can play games that support either the base memory controller, or the MC1 and MC3 variants. The emulator was implemented by having a GameBoy class that held instances \
-                                of a memory controller, CPU, renderer, input, and timer class (which mimicked the hardware layout of the original Game Boy).</p> \
-                                <p>This project holds a close place in my heart as the Game Boy was my favorite console growing up. As an added bonus, this project took advantage of my 'SerializeQueue' serialization library for saving game states.</p> \
-                                <p><a href='http://github.com/Salgat/GameBoyEmulator-GBS'><i class='fa fa-github-square wow bounceIn text-primary'></i> GitHub Repository</a></p>";
-                                
-        var greyweaverHtml = "<h3 style='text-align: center;'>GreyWeaver</h3> \
-                              <p>GreyWeaver is a closed source C++ game whose gameplay and visuals can best be described as a Diablo-clone. This is a long-term project that has been in the works for over a year. SFML is used for the graphics; GIMP, Blender, \
-                              and Python are used for all visuals; and the game is designed to be cross-platform compatible.</p> \
-                              <p>While the game is close-sourced, details about it are occasionally released on my blog. Below is a list of features that are implemented so far,</p> \
-                              <ul style='text-align: left;'> \
-                              <li><b>Audio:</b> Audio effects are in the game, including sound effects for running, attacking, etc. Each map has its own music too. Check out a preview <a href='http://salgat.blogspot.com/2015/03/feature-update-audio.html'>here</a>.</li> \
-                              <li><b>Random Map Generation:</b> The game supports both hand-made maps and randomly generated maps. For the technical details, <a href='http://salgat.blogspot.com/2015/03/first-stages-map-generation.html'>check out this blog post</a>.</li> \
-                              <li><b>Questing:</b> Each quest runs off a script that can be assigned to units (NPCs). Check out this <a href='http://salgat.blogspot.com/2015/02/questing-implemented.html'>blog post</a> for more information including the script implementation.</li> \
-                              <li><b>Fully Parallelized:</b> At the heart of the game are the units on the screen, which are processed in parallel using Intel's <a href='https://www.threadingbuildingblocks.org/'>Threading Building Blocks</a> library. Using both the Producer-Consumer \
-                              model to seperate the logic processing from the visual client, and the Actor model to parallelize unit processing, the game achieves high performance that scales with as many cores as you can throw at it. Check out this \
-                              <a href='http://salgat.blogspot.com/2015/02/parallelizing-game.html'>blog post</a> for a great writeup covering the implementation.</li> \
-                              <li><b>And many more features:</b> Experience and leveling, interface, items and inventory, saving and loading game state, menuing, and so on!</li> \
-                              </ul> \
-                             ";
-                             
-        var redditboostHtml = "";                    
-        
-        var serializequeueHtml =   "<p>SerializeQueue (serq) is a C++14 header only library that supports serializing data and STL containers using a queue. Data is pushed onto the queue and is popped in the same order. It is the responsibility of the \
-                                    programmer to ensure that push and pop order is correct, otherwise data will be deserialized incorrectly. Additionally, data integrity is stored using CRC32 and can be optionally checked upon deserialization.</p> \
-                                    <p>SerializeQueue supports the following data types,</p> \
-                                    <ul> \
-                                        <li>bool</li> \
-                                        <li>char, unsigned char</li> \
-                                        <li>uint64_t</li> \
-                                        <li>int, unsigned int</li> \
-                                        <li>float, double</li> \
-                                        <li>std::string</li> \
-                                        <li>STL Containers (which can hold any of the supported types, including other STL containers) \
-                                            <ul> \
-                                                <li>std::pair</li> \
-                                                <li>std::tuple (limited to basic types)</li> \
-                                                <li>std::vector</li> \
-                                                <li>std::array</li> \
-                                                <li>std::map, std::unordered_map</li> \
-                                                <li>std::queue</li> \
-                                                <li>std::stack</li> \
-                                            </ul> \
-                                        </li> \
-                                    </ul> \
-                                    <p>This project was created due to the lack of an easy to use serialization library. Being header only, there are no dependencies outside of adding the header file to your project.</p> \
-                                    <p><a href='http://github.com/Salgat/SerializeQueue'><i class='fa fa-github-square wow bounceIn text-primary'></i> GitHub Repository</a></p>";
-        
-        var wiimotionHtml = "<p>In between semesters, I was able to recieve an undergraduate research fellowship at the University of Michigan - Ann Arbor. The lab I was assigned to had me tasked with implementing I2C, a type of hardware communication protocol.</p> \
-                             <p>After completing implementing the interface (which was written in C and implemented as part of the custom nanokernel), I decided to write an interface to Nintendo Wii Controller peripherals in Java to demonstrate communications. \
-                             The professor and other students decided to utilize this technology to implement a very cheap and reliable gyroscrope and accelerometer by using the Wii MotionPlus peripheral.</p> \
-                             <p><a href='http://salgat-urop.blogspot.com/'>- Fellowship Experience Blog</a></p> \
-                             <p><a href='https://www.youtube.com/watch?v=F-jsrnr3r5c'>- Video demonstration of interfacing between computer and peripheral</a></p>";
-    
-        // Wait until the DOM has loaded before querying the document
-        var projectIds = [{id: '#portfolio-bubblegrow', html: bubblegrowHtml}, {id: '#portfolio-gbs', html: gbsHtml}, {id: "#portfolio-greyweaver", html: greyweaverHtml}, 
-                          {id: "#portfolio-redditboost", html: redditboostHtml}, {id: "#portfolio-serializequeue", html: serializequeueHtml}, {id: "#portfolio-wiimotion", html: wiimotionHtml}];
-        $(document).ready(function(){
-            projectIds.forEach(function(projectId) {
-                $(projectId.id).click(function(e){
-                    modal.open({content: projectId.html});
-                    e.preventDefault();
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
