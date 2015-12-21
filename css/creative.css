@@ -34,7 +34,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #036564;
 }
 
 h1,
@@ -95,7 +95,7 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: #036564;
 }
 
 .navbar-default .nav > li>a,
@@ -159,7 +159,7 @@ aside {
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
+        color: #036564;
     }
 
     .navbar-default.affix .nav > li>a,
@@ -247,6 +247,7 @@ header .header-content .header-content-inner p {
 .service-box {
     margin: 50px auto 0;
     max-width: 400px;
+    min-height: 210px;
 }
 
 @media(min-width:992px) {
