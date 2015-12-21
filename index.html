@@ -166,7 +166,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-bubblegrow" href="javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/BubbleGrow.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -181,7 +181,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-gbs" href="javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/GameboyEmulator.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -196,7 +196,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-greyweaver" href="#javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/GreyWeaver.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -211,7 +211,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-redditboost" href="javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/RedditBoost.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -226,7 +226,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-serializequeue" href="javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/SerializeQueue.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -241,7 +241,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a id="portfolio-wiimotion" href="javascript:void(0)" class="portfolio-box">
                         <img src="img/portfolio/WiiMotionPlus.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -302,6 +302,90 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
+    <!-- Modal Popup for Gallery -->
+    <script>
+        var modal = (function(){
+            var 
+            method = {},
+            $overlay,
+            $modal,
+            $content,
+            $close;
+    
+            // Center the modal in the viewport
+            method.center = function () {
+                var top, left;
+    
+                top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
+                left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
+    
+                $modal.css({
+                    top:top + $(window).scrollTop(), 
+                    left:left + $(window).scrollLeft()
+                });
+            };
+    
+            // Open the modal
+            method.open = function (settings) {
+                $content.empty().append(settings.content);
+    
+                $modal.css({
+                    width: settings.width || 'auto', 
+                    height: settings.height || 'auto'
+                });
+    
+                method.center();
+                $(window).bind('resize.modal', method.center);
+                $modal.show();
+                $overlay.show();
+            };
+    
+            // Close the modal
+            method.close = function () {
+                $modal.hide();
+                $overlay.hide();
+                $content.empty();
+                $(window).unbind('resize.modal');
+            };
+    
+            // Generate the HTML and add it to the document
+            $overlay = $('<div id="overlay"></div>');
+            $modal = $('<div id="modal"></div>');
+            $content = $('<div id="content"></div>');
+            $close = $('<a id="close" href="#">close</a>');
+    
+            $modal.hide();
+            $overlay.hide();
+            $modal.append($content, $close);
+    
+            $(document).ready(function(){
+                $('body').append($overlay, $modal);						
+            });
+    
+            $close.click(function(e){
+                e.preventDefault();
+                method.close();
+            });
+    
+            return method;
+        }());
+    
+        // Markup for each project modal
+        var bubblegrowHtml =   "<h3 style='text-align: center'>BubbleGrow</h3> \
+                                <p> BubbleGrow is a free, open-source, and cross-platform game developed with the intention of being friendly for developers (particularly inexperienced) to contribute to. \
+                                    This is a C++14 project whose only dependency is currently <a href='http://www.sfml-dev.org/'>SFML</a>.</p> \
+                                <p> To play the game (Windows 64-bit): <a href='http://github.com/Salgat/BubbleGrow/raw/master/BubbleGrow-V0.1-Windows-x64.zip'>CLICK HERE</a></p> \
+                                <p><a href='http://github.com/Salgat/BubbleGrow'>- GitHub Repository</a></p>\
+                                <p><a href='http://github.com/Salgat/BubbleGrow/wiki'>- GitHub Repository - Documentation</a></p>";
+    
+        // Wait until the DOM has loaded before querying the document
+        $(document).ready(function(){
+            $('a#portfolio-bubblegrow').click(function(e){
+                modal.open({content: bubblegrowHtml});
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 
 </html>
